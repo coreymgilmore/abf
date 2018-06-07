@@ -210,8 +210,7 @@ func (p *PickupRequest) RequestPickup() (responseData Response, err error) {
 	//set test mode
 	v.Add("Test", testMode)
 
-	log.Println(v.Encode())
-
+	//add items
 	for index, item := range p.Items {
 		v.Add("HN"+strconv.Itoa(index), strconv.Itoa(int(item.HandlingUnits)))
 		v.Add("HT"+strconv.Itoa(index), item.UnitType)
